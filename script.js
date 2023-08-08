@@ -4,13 +4,6 @@ const modal = document.querySelector(".modal");
 const overlay = document.querySelector(".overlay");
 const btnCloseModal = document.querySelector(".close-modal");
 const btnShowModal = document.querySelectorAll(".show-modal");
-const hidden = document.querySelector(".hidden");
-
-// console.log(overlay);
-// console.log(modal);
-// console.log(btnShowModal);
-// console.log(btnCloseModal);
-// console.log(hidden);
 
 const closeModal = () => {
   modal.classList.add("hidden");
@@ -31,3 +24,10 @@ btnCloseModal.addEventListener("click", closeModal);
 
 // Hiding the modal when clicking the overlay.
 overlay.addEventListener("click", closeModal);
+
+// Listening for keyboard events.
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Escape" && !modal.classList.contains("hidden")) {
+    closeModal();
+  }
+});
