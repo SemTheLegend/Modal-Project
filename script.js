@@ -21,11 +21,13 @@ for (let i = 0; i < btnShowModal.length; i++) {
   })
 }
 
+// Hiding the modal when clicking the close btn.
 btnCloseModal.addEventListener("click", () => {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
 });
 
+// Hiding the modal when clicking the overlay.
 overlay.addEventListener("click", () => {
   modal.classList.add("hidden");
   overlay.classList.add("hidden");
