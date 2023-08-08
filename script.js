@@ -12,6 +12,11 @@ const hidden = document.querySelector(".hidden");
 // console.log(btnCloseModal);
 // console.log(hidden);
 
+const closeModal = () => {
+  modal.classList.add("hidden");
+  overlay.classList.add("hidden");
+}
+
 for (let i = 0; i < btnShowModal.length; i++) {
   btnShowModal[i].addEventListener("click", () => {
     // For showing the modal window.
@@ -22,13 +27,7 @@ for (let i = 0; i < btnShowModal.length; i++) {
 }
 
 // Hiding the modal when clicking the close btn.
-btnCloseModal.addEventListener("click", () => {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-});
+btnCloseModal.addEventListener("click", closeModal);
 
 // Hiding the modal when clicking the overlay.
-overlay.addEventListener("click", () => {
-  modal.classList.add("hidden");
-  overlay.classList.add("hidden");
-});
+overlay.addEventListener("click", closeModal);
